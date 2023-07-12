@@ -18,6 +18,7 @@ export default class List extends Component {
 			<ul className="todo-main">
 				{
 					todos.map( todo =>{
+						// 下面的第二个{...todo}相当于把todo属性和属性的值都传进去了
 						return <Item key={todo.id} {...todo} updateTodo={updateTodo} deleteTodo={deleteTodo}/>
 					})
 				}

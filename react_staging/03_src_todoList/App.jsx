@@ -78,6 +78,7 @@ export default class App extends Component {
 		return (
 			<div className="todo-container">
 				<div className="todo-wrap">
+					{/* 给header传了一个函数，vue也是采取的这种方式 */}
 					<Header addTodo={this.addTodo}/>
 					<List todos={todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
 					<Footer todos={todos} checkAllTodo={this.checkAllTodo} clearAllDone={this.clearAllDone}/>
