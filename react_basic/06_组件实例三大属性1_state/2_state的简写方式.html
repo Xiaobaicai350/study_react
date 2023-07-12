@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>state简写方式</title>
+</head>
+
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		//1.创建组件
+		class Weather extends React.Component {
+			//初始化状态
+			// 在类里面可以直接写属性名来给属性赋值，不需要用let和var进行声明
+			state = { isHot: false, wind: '微风' }
+
+			render() {
+				const { isHot, wind } = this.state
+				return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}，{wind}</h1>
+			}
+
+			//下面的意思是新建一个函数然后给这个类赋值一个名叫changeWeather的属性，属性值是一个函数
+			// 需要注意的是这个函数是箭头函数，没有自己的this，只能去外侧去找，调用这个函数的是react，但是这里是箭头函数就会去找这个组件实例对象
+			//自定义方法————要用赋值语句的形式+箭头函数
+			changeWeather = () => {
+				const isHot = this.state.isHot
+				this.setState({ isHot: !isHot })
+			}
+		}
+		//2.渲染组件到页面
+		ReactDOM.render(<Weather />, document.getElementById('test'))
+
+	</script>
+</body>
+
+</html>
