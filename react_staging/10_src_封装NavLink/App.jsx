@@ -23,6 +23,7 @@ export default class App extends Component {
 							<a className="list-group-item active" href="./home.html">Home</a> */}
 
 							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
+							{/* 标签体内的About会传入子组件的props属性中，属性名称叫children */}
 							<MyNavLink to="/about">About</MyNavLink>
 							<MyNavLink to="/home">Home</MyNavLink>
 						</div>
