@@ -72,12 +72,12 @@ state => ({key:value}), //映射状态
 
 ## 7.求和案例\_react-redux 开发者工具的使用
 
-    		(1).yarn add redux-devtools-extension
-    		(2).store中进行配置
-    				import {composeWithDevTools} from 'redux-devtools-extension'
-    				const store = createStore(allReducer,composeWithDevTools(applyMiddleware(thunk)))
+(1).yarn add redux-devtools-extension
+(2).store 中进行配置
+import {composeWithDevTools} from 'redux-devtools-extension'
+const store = createStore(allReducer,composeWithDevTools(applyMiddleware(thunk)))
 
 ## 8.求和案例\_react-redux 最终版
 
-    		(1).所有变量名字要规范，尽量触发对象的简写形式。
-    		(2).reducers文件夹中，编写index.js专门用于汇总并暴露所有的reducer
+(1).所有变量名字要规范，尽量触发对象的简写形式。
+(2).reducers 文件夹中，编写 index.js 专门用于汇总并暴露所有的 reducer
